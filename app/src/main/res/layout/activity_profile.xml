@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/appbg4"
+    tools:context=".ProfileActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,19 +18,19 @@
     tools:context=".ProfileActivity">
 
     <ImageView
+        android:id="@+id/profileImg"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/profileImg"
         android:layout_marginTop="30dp"
         android:src="@drawable/whitelogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/titleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/titleName"
         android:layout_marginTop="10dp"
         android:text="Name"
         android:textColor="@color/white"
@@ -29,29 +38,29 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/profileImg"
         app:layout_constraintStart_toStartOf="@id/profileImg"
-        app:layout_constraintTop_toBottomOf="@id/profileImg"/>
+        app:layout_constraintTop_toBottomOf="@id/profileImg" />
 
     <TextView
+        android:id="@+id/titleUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/titleUsername"
         android:text="username"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@id/titleName"
         app:layout_constraintStart_toStartOf="@id/titleName"
-        app:layout_constraintTop_toBottomOf="@id/titleName"/>
+        app:layout_constraintTop_toBottomOf="@id/titleName" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/white_background"
         android:orientation="vertical"
         android:padding="10dp"
-        android:background="@drawable/white_background"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleUsername">
@@ -59,32 +68,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/name"
                 android:layout_weight="1"
                 android:text="Name"
-                android:textStyle="bold"
                 android:textColor="@color/lavender"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/profileName"
-                android:text="name"
                 android:layout_weight="1"
+                android:text="name"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/grey"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -93,34 +102,34 @@
             android:layout_height="1dp"
             android:layout_margin="10dp"
             android:alpha="0.5"
-            android:background="@color/lavender"/>
+            android:background="@color/lavender" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:padding="8dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <TextView
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/email"
                 android:layout_weight="1"
                 android:text="Email"
-                android:textStyle="bold"
                 android:textColor="@color/lavender"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/profileEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/profileEmail"
-                android:text="email"
                 android:layout_weight="1"
+                android:text="email"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/grey"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -129,34 +138,34 @@
             android:layout_height="1dp"
             android:layout_margin="10dp"
             android:alpha="0.5"
-            android:background="@color/lavender"/>
+            android:background="@color/lavender" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:padding="8dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <TextView
+                android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/username"
                 android:layout_weight="1"
                 android:text="Username"
-                android:textStyle="bold"
                 android:textColor="@color/lavender"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/profileUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/profileUsername"
-                android:text="username"
                 android:layout_weight="1"
+                android:text="username"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/grey"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -165,50 +174,66 @@
             android:layout_height="1dp"
             android:layout_margin="10dp"
             android:alpha="0.5"
-            android:background="@color/lavender"/>
+            android:background="@color/lavender" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:padding="8dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <TextView
+                android:id="@+id/password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/password"
                 android:layout_weight="1"
                 android:text="Password"
-                android:textStyle="bold"
                 android:textColor="@color/lavender"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/profilePassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/profilePassword"
-                android:text="password"
                 android:layout_weight="1"
+                android:text="password"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/grey"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/editButton"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:id="@+id/editButton"
         android:gravity="center"
         android:text="Edit Profile"
         android:textSize="18sp"
-        app:cornerRadius = "20dp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/linearLayout"
         app:layout_constraintStart_toStartOf="@id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_background"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_menu"
+        tools:ignore="MissingConstraints"
+        />
+</RelativeLayout>
