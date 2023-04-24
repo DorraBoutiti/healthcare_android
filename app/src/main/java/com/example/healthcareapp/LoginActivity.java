@@ -25,6 +25,21 @@ public class LoginActivity extends AppCompatActivity {
     Button loginButton;
     TextView signupRedirectText;
     SharedPreferences sharedpreferences;
+    public String currentEmail;
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        sharedpreferences = getSharedPreferences(MyPREFERENCES,
+                Context.MODE_PRIVATE);
+
+        currentEmail = sharedpreferences.getString("email","");
+        if (currentEmail != ""){
+            Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
