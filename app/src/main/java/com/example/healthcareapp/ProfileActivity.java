@@ -18,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class ProfileActivity extends AppCompatActivity {
 
     TextView profileName, profileEmail, profileUsername, profilePassword;
@@ -25,6 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
     Button editProfile;
     public static final String MyPREFERENCES = "MyPrefs" ;
     SharedPreferences sharedpreferences;
+    BottomNavigationView bottomNavigationView;
 
 
 
@@ -40,6 +43,8 @@ public class ProfileActivity extends AppCompatActivity {
         titleName = findViewById(R.id.titleName);
         titleUsername = findViewById(R.id.titleUsername);
         editProfile = findViewById(R.id.editButton);
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_profile);
 
         showAllUserData();
 
@@ -48,6 +53,28 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 passUserData();
             }
+        });
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_home:
+                    startActivity(new Intent(getApplicationContext(), StoreActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_search:
+                    startActivity(new Intent(getApplicationContext(), StoreActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_settings:
+                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_profile:
+                    return true;
+            }
+            return false;
         });
 
     }

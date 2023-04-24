@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +28,7 @@ public class StoreActivity extends AppCompatActivity {
     List<DataClass> dataList;
     MyAdapter adapter;
     SearchView searchView;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,8 @@ public class StoreActivity extends AppCompatActivity {
         adapter = new MyAdapter(StoreActivity.this, dataList);
         recyclerView.setAdapter(adapter);
         databaseReference = FirebaseDatabase.getInstance().getReference("Medicaments");
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_home);
         dialog.show();
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -80,6 +85,30 @@ public class StoreActivity extends AppCompatActivity {
                 Intent intent = new Intent(StoreActivity.this, UploadActivity.class);
                 startActivity(intent);
             }
+        });
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_home:
+
+                    return true;
+                case R.id.bottom_search:
+                    startActivity(new Intent(getApplicationContext(), StoreActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_settings:
+                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_profile:
+                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
         });
     }
     public void searchList(String text){
