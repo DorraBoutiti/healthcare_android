@@ -45,7 +45,14 @@ public class ProfileActivity extends AppCompatActivity {
         editProfile = findViewById(R.id.editButton);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_profile);
-
+        sharedpreferences = getSharedPreferences(MyPREFERENCES,
+                Context.MODE_PRIVATE);
+        titleName.setText(sharedpreferences.getString("name",""));
+        titleUsername.setText(sharedpreferences.getString("username",""));
+        profileName.setText(sharedpreferences.getString("name",""));
+        profileEmail.setText(sharedpreferences.getString("email",""));
+        profileUsername.setText(sharedpreferences.getString("username",""));
+        profilePassword.setText(sharedpreferences.getString("password",""));
         showAllUserData();
 
         editProfile.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +64,7 @@ public class ProfileActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.bottom_home:
-                    startActivity(new Intent(getApplicationContext(), StoreActivity.class));
+                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
@@ -71,8 +78,14 @@ public class ProfileActivity extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
+                case R.id.botom_map:
+                    startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
                 case R.id.bottom_profile:
                     return true;
+
             }
             return false;
         });

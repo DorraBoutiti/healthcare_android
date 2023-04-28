@@ -119,12 +119,12 @@ public class LoginActivity extends AppCompatActivity {
                         String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
-                        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         SharedPreferences.Editor editor = sharedpreferences.edit();
-                        editor.putString("name", nameFromDB);
+                        editor.putString("name", userUsername);
                         editor.putString("email", emailFromDB);
-                        editor.putString("username", usernameFromDB);
-                        editor.putString("password", passwordFromDB);
+                        editor.putString("username", userUsername);
+                        editor.putString("password", userPassword);
                         editor.commit();
 
                         intent.putExtra("name", nameFromDB);

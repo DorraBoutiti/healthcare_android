@@ -102,6 +102,11 @@ public class StoreActivity extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
+                case R.id.botom_map:
+                    startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
                 case R.id.bottom_profile:
                     startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

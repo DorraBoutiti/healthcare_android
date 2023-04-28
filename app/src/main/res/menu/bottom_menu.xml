@@ -9,6 +9,10 @@
         android:icon="@drawable/baseline_search_24"
         android:title="Search" />
     <item
+        android:id="@+id/botom_map"
+        android:icon="@drawable/baseline_map_24"
+        android:title="Search" />
+    <item
         android:id="@+id/bottom_settings"
         android:icon="@drawable/baseline_settings_24"
         android:title="Settings" />
