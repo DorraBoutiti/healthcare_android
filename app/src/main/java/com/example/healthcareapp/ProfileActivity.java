@@ -93,18 +93,12 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void showAllUserData(){
-        Intent intent = getIntent();
-        String nameUser = intent.getStringExtra("name");
-        String emailUser = intent.getStringExtra("email");
-        String usernameUser = intent.getStringExtra("username");
-        String passwordUser = intent.getStringExtra("password");
-
-        titleName.setText(nameUser);
-        titleUsername.setText(usernameUser);
-        profileName.setText(nameUser);
-        profileEmail.setText(emailUser);
-        profileUsername.setText(usernameUser);
-        profilePassword.setText(passwordUser);
+        titleName.setText(sharedpreferences.getString("name",""));
+        titleUsername.setText(sharedpreferences.getString("username",""));
+        profileName.setText(sharedpreferences.getString("name",""));
+        profileEmail.setText(sharedpreferences.getString("email",""));
+        profileUsername.setText(sharedpreferences.getString("username",""));
+        profilePassword.setText(sharedpreferences.getString("password",""));
     }
 
     public void passUserData(){

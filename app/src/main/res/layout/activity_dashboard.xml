@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg1"
     tools:context=".DashboardActivity">
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:id="@+id/profileName"
+        android:text="Bienvenue nom"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="260dp"
+        android:gravity="center_vertical|center_horizontal"/>
 
     <TextView
         android:layout_width="150dp"

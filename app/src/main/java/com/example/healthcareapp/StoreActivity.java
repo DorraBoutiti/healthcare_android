@@ -49,7 +49,7 @@ public class StoreActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         databaseReference = FirebaseDatabase.getInstance().getReference("Medicaments");
         bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_home);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_search);
         dialog.show();
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -90,7 +90,7 @@ public class StoreActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.bottom_home:
-
+                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                     return true;
                 case R.id.bottom_search:
                     startActivity(new Intent(getApplicationContext(), StoreActivity.class));

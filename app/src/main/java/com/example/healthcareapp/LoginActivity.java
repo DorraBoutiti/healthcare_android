@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
                 Context.MODE_PRIVATE);
 
         currentEmail = sharedpreferences.getString("email","");
+        Log.d("email", currentEmail);
         if (currentEmail != ""){
             Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
             startActivity(intent);
@@ -122,16 +124,14 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putString("name", userUsername);
+                        Log.d("name", usernameFromDB);
                         editor.putString("email", emailFromDB);
+                        Log.d("email", emailFromDB);
                         editor.putString("username", userUsername);
+                        Log.d("username", usernameFromDB);
                         editor.putString("password", userPassword);
+                        Log.d("password", passwordFromDB);
                         editor.commit();
-
-                        intent.putExtra("name", nameFromDB);
-                        intent.putExtra("email", emailFromDB);
-                        intent.putExtra("username", usernameFromDB);
-                        intent.putExtra("password", passwordFromDB);
-
                         startActivity(intent);
                     } else {
                         loginPassword.setError("Invalid Credentials");
