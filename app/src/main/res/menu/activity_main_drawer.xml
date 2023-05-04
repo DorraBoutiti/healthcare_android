@@ -19,9 +19,9 @@
             android:title="Maps"
             />
         <item
-            android:id="@+id/menuInbox"
+            android:id="@+id/nav_medicaments"
             android:icon="@drawable/inbox"
-            android:title="inbox"
+            android:title="medicaments"
             />
         <item android:title="others">
             <menu>
@@ -30,11 +30,7 @@
                     android:icon="@drawable/settings"
                     android:title="settings"
                     />
-                <item
-                    android:id="@+id/AboutUs"
-                    android:icon="@drawable/settings"
-                    android:title="about_us"
-                    />
+
             </menu>
         </item>
         <item
