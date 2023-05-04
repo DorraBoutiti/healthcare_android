@@ -124,13 +124,13 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putString("name", userUsername);
-                        Log.d("name", usernameFromDB);
+
                         editor.putString("email", emailFromDB);
-                        Log.d("email", emailFromDB);
+
                         editor.putString("username", userUsername);
-                        Log.d("username", usernameFromDB);
+
                         editor.putString("password", userPassword);
-                        Log.d("password", passwordFromDB);
+
                         editor.commit();
                         startActivity(intent);
                     } else {

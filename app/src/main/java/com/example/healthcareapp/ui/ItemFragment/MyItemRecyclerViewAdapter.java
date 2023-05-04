@@ -46,7 +46,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
+
+        Glide.with(context).load(dataList.get(position).getDataImage()).placeholder(R.drawable.medicine).into(holder.recImage);
         holder.recTitle.setText(dataList.get(position).getDataTitle());
         holder.recDesc.setText(dataList.get(position).getDataDesc());
         holder.recLang.setText(dataList.get(position).getDataLang());

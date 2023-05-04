@@ -37,7 +37,7 @@ import java.util.List;
  */
 public class ItemFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
+
     private static final String ARG_COLUMN_COUNT = "column-count";
     FloatingActionButton fab;
     DatabaseReference databaseReference;
@@ -46,18 +46,9 @@ public class ItemFragment extends Fragment {
     List<DataClass> dataList;
     MyItemRecyclerViewAdapter adapter;
     SearchView searchView;
-    // TODO: Customize parameters
-    private int mColumnCount = 1;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public ItemFragment() {
     }
-
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static ItemFragment newInstance(int columnCount) {
         ItemFragment fragment = new ItemFragment();
         Bundle args = new Bundle();
@@ -71,7 +62,7 @@ public class ItemFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+            //mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
     }
 
