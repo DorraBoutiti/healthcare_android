@@ -42,8 +42,6 @@ public class mapsFragment extends Fragment {
                 if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(getActivity(), new String[] { Manifest.permission.ACCESS_FINE_LOCATION }, 1010);
                 }
-
-
                 googleMap.setMyLocationEnabled(true);
 
                 FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getContext());
@@ -58,7 +56,6 @@ public class mapsFragment extends Fragment {
                         }
                     }
                 });
-
             }
         });
         return view;
