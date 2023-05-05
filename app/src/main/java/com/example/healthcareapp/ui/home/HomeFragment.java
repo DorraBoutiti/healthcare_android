@@ -62,23 +62,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // Simulated data
-        int stepsCount = 5000;
-        int heartRate = 75;
 
-        updateStepsCount(stepsCount);
-        updateHeartRate(heartRate);
+
 
         return v;
 
     }
-    private void updateStepsCount(int count) {
-        stepsTextView.setText("Nombre de pas: " + count);
-    }
 
-    private void updateHeartRate(int rate) {
-        heartRateTextView.setText("Fréquence cardiaque: " + rate);
-    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();

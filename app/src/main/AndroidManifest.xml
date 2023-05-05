@@ -33,6 +33,10 @@
             android:exported="false" />
         <activity
             android:name=".CalculIMCIMGActivity"
+
+            android:exported="false" />
+        <activity
+
             android:name=".NoteDetailsActivity"
             android:exported="false" />
         <activity
