@@ -13,8 +13,35 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_gallery" />
         <item
+<<<<<<< Updated upstream
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+=======
+            android:id="@+id/nav_map"
+            android:icon="@drawable/baseline_map_24"
+            android:title="Maps"
+            />
+        <item
+            android:id="@+id/nav_medicaments"
+            android:icon="@drawable/inbox"
+            android:title="medicaments"
+            />
+        <item android:title="others">
+            <menu>
+                <item
+                    android:id="@+id/settingsFragment"
+                    android:icon="@drawable/settings"
+                    android:title="settings"
+                    />
+
+            </menu>
+        </item>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="@string/log_out"
+            />
+>>>>>>> Stashed changes
     </group>
 </menu>
