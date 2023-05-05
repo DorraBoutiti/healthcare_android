@@ -74,7 +74,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Documents"
+                    android:text="CalculateBMI"
                     android:textAlignment="center"
                     android:textColor="@color/lavender"
                     android:textStyle="bold" />
@@ -107,7 +107,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Downloads"
+                    android:text="Calcul steps"
                     android:textAlignment="center"
                     android:textColor="@color/lavender"
                     android:textStyle="bold" />
