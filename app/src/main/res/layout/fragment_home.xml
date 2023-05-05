@@ -147,8 +147,5 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
     </GridLayout>
-
-
 </RelativeLayout>

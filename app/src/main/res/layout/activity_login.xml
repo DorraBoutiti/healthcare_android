@@ -58,7 +58,16 @@
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
-
+            <TextView
+                android:textSize="15sp"
+                android:gravity="left"
+                android:layout_marginTop="10sp"
+                android:id="@+id/forgot"
+                android:textColor="@color/lavender"
+                android:text="@string/forgot_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

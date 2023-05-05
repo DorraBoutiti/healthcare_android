@@ -27,7 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
     Button editProfile;
     public static final String MyPREFERENCES = "MyPrefs" ;
     SharedPreferences sharedpreferences;
-    BottomNavigationView bottomNavigationView;
+
 
 
 
@@ -43,8 +43,6 @@ public class ProfileActivity extends AppCompatActivity {
         titleName = findViewById(R.id.titleName);
         titleUsername = findViewById(R.id.titleUsername);
         editProfile = findViewById(R.id.editButton);
-        bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_profile);
         sharedpreferences = getSharedPreferences(MyPREFERENCES,
                 Context.MODE_PRIVATE);
         titleName.setText(sharedpreferences.getString("name",""));
@@ -60,34 +58,6 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 passUserData();
             }
-        });
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.bottom_home:
-                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_search:
-                    startActivity(new Intent(getApplicationContext(), StoreActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_settings:
-                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.botom_map:
-                    startActivity(new Intent(getApplicationContext(), MapsActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_profile:
-                    return true;
-
-            }
-            return false;
         });
 
     }
