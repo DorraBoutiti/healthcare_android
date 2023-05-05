@@ -23,6 +23,11 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
+        android:id="@+id/nav_notes"
+        android:name="com.example.healthcareapp.NotesFragment"
+        android:label="@string/menu_notes"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
         android:id="@+id/nav_medicaments"
         android:name="com.example.healthcareapp.ui.ItemFragment.ItemFragment"
         android:label="@string/menu_medicament"

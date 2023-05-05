@@ -23,6 +23,7 @@
     <string name="menu_home">Dashboard</string>
     <string name="menu_gallery">Profil</string>
     <string name="menu_slideshow">Ma position</string>
+    <string name="menu_notes">Mes notes</string>
     <string name="menu_medicament">Médicaments</string>
     <string name="title_activity_dashboard">dashboard</string>
     <string name="title_activity_maps">MapsActivity</string>

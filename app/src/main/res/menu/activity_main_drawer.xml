@@ -20,9 +20,14 @@
             android:title="Maps"
             />
         <item
+            android:id="@+id/nav_notes"
+            android:icon="@drawable/baseline_map_24"
+            android:title="Notes"
+            />
+        <item
             android:id="@+id/nav_medicaments"
             android:icon="@drawable/inbox"
-            android:title="medicaments"
+            android:title="Medicaments"
             />
         <item android:title="others">
             <menu>

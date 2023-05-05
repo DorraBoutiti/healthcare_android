@@ -19,7 +19,6 @@
 
 
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -34,6 +33,10 @@
             android:exported="false" />
         <activity
             android:name=".CalculIMCIMGActivity"
+            android:name=".NoteDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
