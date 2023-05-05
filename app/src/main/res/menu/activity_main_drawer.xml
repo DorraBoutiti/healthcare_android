@@ -34,7 +34,7 @@
 
                     android:id="@+id/settingsFragment"
 
-                    android:id="@+id/Setting"
+                    android:actionLayout="@layout/fragment_settings"
 
                     android:icon="@drawable/settings"
                     android:title="settings"
