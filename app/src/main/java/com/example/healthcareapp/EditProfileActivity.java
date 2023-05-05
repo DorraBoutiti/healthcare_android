@@ -2,8 +2,11 @@ package com.example.healthcareapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +21,8 @@ public class EditProfileActivity extends AppCompatActivity {
     Button saveButton;
     String nameUser, emailUser, usernameUser, passwordUser;
     DatabaseReference reference;
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,8 @@ public class EditProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
 
         reference = FirebaseDatabase.getInstance().getReference("users");
-
+        sharedpreferences = getSharedPreferences(MyPREFERENCES,
+                Context.MODE_PRIVATE);
         editName = findViewById(R.id.editName);
         editEmail = findViewById(R.id.editEmail);
         editUsername = findViewById(R.id.editUsername);
@@ -39,6 +45,14 @@ public class EditProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (isNameChanged() || isPasswordChanged() || isEmailChanged()){
                     Toast.makeText(EditProfileActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString("name", nameUser);
+                    editor.putString("email", emailUser);
+                    editor.putString("username", usernameUser);
+                    editor.putString("password", passwordUser);
+                    editor.commit();
+                    Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(EditProfileActivity.this, "No Changes Found", Toast.LENGTH_SHORT).show();
                 }
@@ -78,17 +92,14 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void showData(){
+        nameUser = sharedpreferences.getString("name","");
+        emailUser = sharedpreferences.getString("email","");
+        usernameUser =  sharedpreferences.getString("username","");
+        passwordUser =  sharedpreferences.getString("password","");
 
-        Intent intent = getIntent();
-
-        nameUser = intent.getStringExtra("name");
-        emailUser = intent.getStringExtra("email");
-        usernameUser = intent.getStringExtra("username");
-        passwordUser = intent.getStringExtra("password");
-
-        editName.setText(nameUser);
-        editEmail.setText(emailUser);
-        editUsername.setText(usernameUser);
-        editPassword.setText(passwordUser);
+        editName.setText(sharedpreferences.getString("name",""));
+        editEmail.setText(sharedpreferences.getString("email",""));
+        editUsername.setText(sharedpreferences.getString("username",""));
+        editPassword.setText(sharedpreferences.getString("password",""));
     }
 }

@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         currentEmail = sharedpreferences.getString("email","");
         Log.d("email", currentEmail);
         if (currentEmail != ""){
-            Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
         }
@@ -121,16 +121,16 @@ public class LoginActivity extends AppCompatActivity {
                         String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
-                        Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putString("name", userUsername);
-                        Log.d("name", usernameFromDB);
+
                         editor.putString("email", emailFromDB);
-                        Log.d("email", emailFromDB);
+
                         editor.putString("username", userUsername);
-                        Log.d("username", usernameFromDB);
+
                         editor.putString("password", userPassword);
-                        Log.d("password", passwordFromDB);
+
                         editor.commit();
                         startActivity(intent);
                     } else {

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation3"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.healthcareapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/menuProfil"
+        android:name="com.example.healthcareapp.ui.profil.ProfilFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_profil" />
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.example.healthcareapp.mapsFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_medicaments"
+        android:name="com.example.healthcareapp.ui.ItemFragment.ItemFragment"
+        android:label="@string/menu_medicament"
+        tools:layout="@layout/fragment_item_list" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.healthcareapp.LogOutFragment"
+        android:label="@string/log_out"
+        tools:layout="@layout/fragment_log_out" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.healthcareapp.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>
